@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 
 import { Provider } from 'react-redux';
+import store from './config/redux.js';
 
 // 라우터 설정
 import { RouterProvider } from 'react-router-dom';
@@ -11,6 +12,8 @@ import router from './config/router.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <Provider store={store}>
+      <RouterProvider router={router}></RouterProvider>
+    </Provider>
   </StrictMode>
 )
